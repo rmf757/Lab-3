@@ -1,5 +1,5 @@
 public class ListElement {
-    pricate ListElement next;
+    private ListElement next;
     private ListElement previous;
     private int data;
 
