@@ -9,3 +9,18 @@ public class ListElement {
         this.previous = null;
     }
 }
+
+/**
+ * @param data
+ *  an integer to be stored in the node
+ * @return 
+ *  None
+ */
+
+ public void setData(int data) {
+     this.data = data;
+ }
+
+ public int getData() {
+     return this.data;
+ }
