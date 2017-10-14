@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class ListElement {
     private ListElement next;
     private ListElement previous;
@@ -8,19 +10,13 @@ public class ListElement {
         this.next = null;
         this.previous = null;
     }
+
+    public void setData(int data) {
+        this.data = data;
+    }
+
+    public int getData() {
+        return this.data;
+    }
+
 }
-
-/**
- * @param data
- *  an integer to be stored in the node
- * @return 
- *  None
- */
-
- public void setData(int data) {
-     this.data = data;
- }
-
- public int getData() {
-     return this.data;
- }
