@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class ListElement {
     private ListElement next;
     private int data;
@@ -16,9 +14,4 @@ public class ListElement {
     public int getData() {
         return this.data;
     }
-
-    public void addElement(ListElement le) {
-
-    }
-
 }
