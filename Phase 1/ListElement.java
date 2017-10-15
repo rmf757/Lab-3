@@ -82,6 +82,24 @@
 			}
 		}
 		
+		public ListElement getElement(int n) {
+			if (n == 1)
+				return first;
+			else if (n == size)
+				return last;
+			else if (n < size && n > 0) {
+				ListElement temp = first;
+				for (int i = 1; i <= n; i++) {
+					temp = temp.next;
+				}
+				return temp;
+			}
+			else {
+				System.out.println("UNEXPECTED ERROR");
+				return null;
+			}
+		}
+		
 		public static void printLinkedListHead() {
             System.out.println("Linked List Elements");
             ListElement temp = first;
