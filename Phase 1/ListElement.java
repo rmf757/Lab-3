@@ -37,10 +37,49 @@
 			size++;
         }
 		
-		public ListElement deleteElement(int i){
-			for	(int i; i < size; i++) }{}
+		public ListElement deleteElement(int a){
+			if (a > size || a <= 0) {
+				System.out.println("INVALID");
+				return null;
+			}
+			
+			else if (a+1 < size) {
+				ListElement prev = first;
+				for	(int i = 1; i < a; i++) {
+					prev = prev.next;
+				}
+				
+				ListElement current = prev.next;
+				ListElement post = current.next;
+				prev.next = post;
+				size--;
+				return current;
+			}
+			
+			else if (a == size) {
+				ListElement prev = first;
+				for	(int i = 1; i < a-1; i++) {
+					prev = prev.next;
+				}
+				
+				ListElement current = last;
+				last = prev;
+				last.next = null;
+				size--;
+				return current;
+			}
+			else if (a == 1) {
+				ListElement prev = first;
+				ListElement post = first.next;
 
-		
+				first = post;
+				size--;
+				return first;
+			}
+			else {
+				System.out.println("UNEXPECTED ERROR");
+				return null;
+			}
 		}
 		
 		public static void printLinkedListHead() {

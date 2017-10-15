@@ -13,7 +13,9 @@ public class UI {
 		LL.addElement(le);
 		le.setData(2);
 		LL.addElement(le);
-
+		ListElement test = LL.deleteElement(2);
+		ListElement test1 = LL.deleteElement(3);
+		ListElement test3 = LL.deleteElement(1);
         LL.printLinkedListHead();
 
 	}
