@@ -11,6 +11,14 @@ public class ListElement {
         this.data = data;
     }
 
+    public void setNext(ListElement n) {
+        this.next = n;
+    }
+
+    public ListElement getNext() {
+        return this.next;
+    }
+
     public int getData() {
         return this.data;
     }
