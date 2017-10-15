@@ -42,20 +42,12 @@
 				System.out.println("INVALID");
 				return null;
 			}
-			
-			else if (a+1 < size) {
-				ListElement prev = first;
-				for	(int i = 1; i < a; i++) {
-					prev = prev.next;
-				}
-				
-				ListElement current = prev.next;
-				ListElement post = current.next;
-				prev.next = post;
+			else if (a == size && size == 1) {
+				ListElement temp = first;
+				first = null;
 				size--;
-				return current;
+				return temp;
 			}
-			
 			else if (a == size) {
 				ListElement prev = first;
 				for	(int i = 1; i < a-1; i++) {
@@ -66,15 +58,31 @@
 				last = prev;
 				last.next = null;
 				size--;
+
 				return current;
 			}
 			else if (a == 1) {
-				ListElement prev = first;
+				ListElement curr = first;
 				ListElement post = first.next;
 
 				first = post;
 				size--;
-				return first;
+
+				return curr;
+			}
+			else if (a+1 <= size) {
+				ListElement prev = first;
+
+				for	(int i = 1; i < a-1; i++) {
+					prev = prev.next;
+				}
+				
+				ListElement current = prev.next;
+				ListElement post = current.next;
+				prev.next = post;
+				size--;
+
+				return current;
 			}
 			else {
 				System.out.println("UNEXPECTED ERROR");
@@ -83,13 +91,17 @@
 		}
 		
 		public ListElement getElement(int n) {
-			if (n == 1)
+			if (n > size || n <= 0) {
+				System.out.println("INVALID");
+				return null;
+			}
+			else if (n == 1)
 				return first;
 			else if (n == size)
 				return last;
 			else if (n < size && n > 0) {
 				ListElement temp = first;
-				for (int i = 1; i <= n; i++) {
+				for (int i = 1; i < n; i++) {
 					temp = temp.next;
 				}
 				return temp;
@@ -101,6 +113,7 @@
 		}
 		
 		public static void printLinkedListHead() {
+
             System.out.println("Linked List Elements");
             ListElement temp = first;
             while (temp != null) {
