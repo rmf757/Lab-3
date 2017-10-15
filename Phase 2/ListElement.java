@@ -49,6 +49,7 @@
 			else if (a == size && size == 1) {
 				ListElement temp = first;
 				first = null;
+				last = null;
 				size--;
 				return temp;
 			}
@@ -70,6 +71,7 @@
 				ListElement post = first.next;
 
 				first = post;
+				first.prev = null;
 				size--;
 
 				return curr;
@@ -83,6 +85,7 @@
 				
 				ListElement current = former.next;
 				ListElement post = current.next;
+				post.prev = former;
 				former.next = post;
 				size--;
 

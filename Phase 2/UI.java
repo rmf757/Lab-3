@@ -14,18 +14,18 @@ public class UI {
 		le.setData(4);
 		LL.addElement(le);
 		
-		ListElement t1 = LL.getElement(1);
+/* 		ListElement t1 = LL.getElement(1);
 		System.out.println(t1.getData());
 		t1 = LL.getElement(2);
 		System.out.println(t1.getData());
 		t1 = LL.getElement(3);
-		System.out.println(t1.getData());
+		System.out.println(t1.getData()); */
 
 
-/* 		ListElement test = LL.deleteElement(1);
+		ListElement test = LL.deleteElement(1);
 		test = LL.deleteElement(2);
 		test = LL.deleteElement(2);
-		test = LL.deleteElement(1); */
+		test = LL.deleteElement(1);
 
         LL.printLinkedListHead();
 		LL.printLinkedListTail();
