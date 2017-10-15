@@ -20,7 +20,7 @@ public class UI {
 		System.out.println(t1.getData());
 		t1 = LL.getElement(3);
 		System.out.println(t1.getData());
-		t1 = LL.getElement(5);
+
 
 /* 		ListElement test = LL.deleteElement(1);
 		test = LL.deleteElement(2);
@@ -28,6 +28,7 @@ public class UI {
 		test = LL.deleteElement(1); */
 
         LL.printLinkedListHead();
+		LL.printLinkedListTail();
 
 	}
 }

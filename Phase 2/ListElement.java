@@ -4,7 +4,7 @@
 		private int data;
 		private static ListElement first;
 		private static ListElement last;
-		private static ListElement prev;
+		private ListElement prev;
 		int size = 0;
 
 		public ListElement() {
@@ -27,10 +27,11 @@
 		
 		public void addElement(ListElement n) {
             ListElement temp = new ListElement(n);
-			n.next = null;
+			temp.next = null;
+			temp.prev = null;
             if (first != null) {
-				temp.prev = last;
                 last.next = temp;
+				temp.prev = last;
                 last = temp;
             } 
 			else {
@@ -52,13 +53,13 @@
 				return temp;
 			}
 			else if (a == size) {
-				ListElement prev = first;
+				ListElement former = first;
 				for	(int i = 1; i < a-1; i++) {
-					prev = prev.next;
+					former = former.next;
 				}
 				
 				ListElement current = last;
-				last = prev;
+				last = former;
 				last.next = null;
 				size--;
 
@@ -74,15 +75,15 @@
 				return curr;
 			}
 			else if (a+1 <= size) {
-				ListElement prev = first;
+				ListElement former = first;
 
 				for	(int i = 1; i < a-1; i++) {
-					prev = prev.next;
+					former = former.next;
 				}
 				
-				ListElement current = prev.next;
+				ListElement current = former.next;
 				ListElement post = current.next;
-				prev.next = post;
+				former.next = post;
 				size--;
 
 				return current;
@@ -117,11 +118,22 @@
 		
 		public static void printLinkedListHead() {
 
-            System.out.println("Linked List Elements");
+            System.out.println("Linked List Elements from Head");
             ListElement temp = first;
             while (temp != null) {
                 System.out.println(temp.data);
                 temp = temp.next;
+            }
+        }
+		
+		public static void printLinkedListTail() {
+
+            System.out.println("Linked List Elements from Tail");
+            ListElement temp = last;
+
+            while (temp != null) {
+                System.out.println(temp.data);
+                temp = temp.prev;
             }
         }
 		
