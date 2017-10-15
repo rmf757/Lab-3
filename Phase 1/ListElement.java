@@ -23,15 +23,14 @@ public class List {
 		public static void insert(ListElement n) {
             ListElement a = new ListElement();
             a = n;
-			a.nextlink = null;
+			a.next = null;
             if (first != null) {
-                last.nextlink = a;
+                last.next = a;
                 last = a;
             } else {
                 first = a;
                 last = a;
             }
-            System.out.println(d);
         }
 		
 	
