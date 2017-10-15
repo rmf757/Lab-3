@@ -4,11 +4,13 @@
 		private int data;
 		private static ListElement first;
 		private static ListElement last;
+		private static ListElement prev;
 		int size = 0;
 
 		public ListElement() {
 			data = 0;
 			next = null;
+			prev = null;
 		}
 		
 		public ListElement(ListElement n) {
@@ -27,6 +29,7 @@
             ListElement temp = new ListElement(n);
 			n.next = null;
             if (first != null) {
+				temp.prev = last;
                 last.next = temp;
                 last = temp;
             } 
@@ -121,4 +124,6 @@
                 temp = temp.next;
             }
         }
+		
+		
 }

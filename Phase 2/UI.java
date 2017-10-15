@@ -21,7 +21,7 @@ public class UI {
 		t1 = LL.getElement(3);
 		System.out.println(t1.getData());
 		t1 = LL.getElement(5);
-		System.out.println("as");
+
 /* 		ListElement test = LL.deleteElement(1);
 		test = LL.deleteElement(2);
 		test = LL.deleteElement(2);
