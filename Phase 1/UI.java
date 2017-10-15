@@ -1,19 +1,20 @@
 public class UI {
 
 	public static void main(String[] args) {
-		//LinkedList test = new LinkedList();
+
+        ListElement LL = new ListElement();
+		ListElement le = new ListElement();
 		
-        ListElement le = new ListElement();
-   
-		le.addElement(5);
-	
-		le.addElement(4);
+		le.setData(5);
+		LL.addElement(le);
+		le.setData(4);
+		LL.addElement(le);
+		le.setData(3);
+		LL.addElement(le);
+		le.setData(2);
+		LL.addElement(le);
 
-		le.addElement(3);
-
-		le.addElement(2);
-
-        le.printLinkedListHead();
+        LL.printLinkedListHead();
 
 	}
 }
